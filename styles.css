@@ -1,0 +1,168 @@
+:root {
+  /* text */
+  --grayish: hsl(228, 12%, 48%);
+
+  /* button + prices */
+  --dark-blue: hsl(212, 21%, 14%);
+  --dark-cyan: hsl(158, 36%, 37%);
+  --active-cyan: hsl(158, 36%, 20%);
+
+  /* background-colors */
+  --cream-background: hsl(30, 38%, 92%);
+  --white: hsl(0, 0%, 100%);
+  
+  /* font-weight */
+  --fw-regular: 500;
+  --fw-bold: 700;
+
+  /* font-family */
+  --ff-regular: 'Montserrat', sans-serif;
+  --ff-frounces: 'Fraunces', serif;
+
+  /* font-size */  
+  --font-size: 14px;
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* general styling */
+
+body {
+  font-size: 0.875rem;
+  font-family: var(--ff-regular);
+  font-weight: var(--fw-regular);
+  color: var(--grayish);
+  background-color: var(--cream-background);
+
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+}
+
+.prices-flex {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.product {
+  --padding: 1.5rem;
+  --spacing: 1rem;
+  
+  display: grid; 
+  margin: 1rem;
+  background-color: var(--white);
+  border-radius: 0.7em;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+@media (min-width: 600px) {
+  .product {
+    --padding: 2rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  .add-to-cart {
+    height: 3rem;
+  }  
+}
+
+.product__content {
+  display: grid;
+  padding: var(--padding);
+  gap: var(--spacing);
+}
+
+.product__category {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: .4em;
+
+}
+
+.header {
+  font-family: var(--ff-frounces);
+  font-size: 2.4em;
+  line-height: 2.2rem;
+  color: var(--dark-blue);
+}
+
+.current-price {
+  font-family: var(--ff-frounces);
+  font-size: 2rem;
+  color: var(--dark-cyan)
+}
+
+.full-price {
+  text-decoration: line-through;
+}
+
+.add-to-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  height: 3.3em;
+  color: var(--white);
+  font-size: 1.1em;
+  font-weight: var(--fw-bold);
+  background-color: var(--dark-cyan);
+  border: none;
+  border-radius: 0.5em;
+}
+
+.add-to-cart:hover {
+  background-color: var(--active-cyan);
+}
+
+.attribution {
+  font-size: 0.7rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid red; */
+}
+
+.attribution p a {
+  color: var(--active-cyan);
+  text-decoration: none;
+}
+
+.attribution p a:hover {
+  color: black;
+}
